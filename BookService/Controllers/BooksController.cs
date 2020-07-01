@@ -5,13 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using BookService.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Cors;
 
 // used tutorial found here to build this Api: https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api
 
 namespace BookService.Controllers
 {
     [Route("[controller]")]
-    public class BooksController : Controller
+    [EnableCors("AllowEveryone")]
+    public class BooksController : ControllerBase
     {
         AngularWorkshopContext _context;
 
